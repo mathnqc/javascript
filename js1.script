@@ -6,7 +6,7 @@ var listAccounts = [
 document.getElementById('submit').addEventListener('click', function(e) { 
     var username = document.getElementById('username').value; 
     listAccounts.forEach(account => { 
-        if(account.username == username) { 
+        if(account.username === username) { 
             alert("Login successful"); 
             document.getElementById('content').style.display='block'; 
             document.getElementById('loginForm').style.display='none'; 
