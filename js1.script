@@ -1,8 +1,7 @@
 <script> 
-// List of username and password 
 var listAccounts = [ 
-    { username:'user1'}, 
-    { username:'user2' }, 
+    { username:'user1',}, 
+    { username:'user2', }, 
 ]; 
 
 document.getElementById('submit').addEventListener('click', function(e) { 
