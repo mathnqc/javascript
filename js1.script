@@ -1,4 +1,18 @@
+<script> 
+// List of username and password 
 var listAccounts = [ 
-    { username:'7573657231', password:'7061737331' }, 
-    { username:'user2', password:'password2' }, 
+    { username:'user1'}, 
+    { username:'user2' }, 
 ]; 
+
+document.getElementById('submit').addEventListener('click', function(e) { 
+    var username = document.getElementById('username').value; 
+    listAccounts.forEach(account => { 
+        if(account.username === username) { 
+            alert("Login successful"); 
+            document.getElementById('content').style.display='block'; 
+            document.getElementById('loginForm').style.display='none'; 
+        } 
+    }); 
+}); 
+</script>
