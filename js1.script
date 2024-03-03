@@ -1,17 +1,19 @@
-// List of username and password 
-var listAccounts = [ 
-    { username:'user1', password:'password1' }, 
-    { username:'user2', password:'password2' }, 
-]; 
+// List of usernames
+var usernames = ["ledinhanh", "hau", "user3"];
 
-document.getElementById('submit').addEventListener('click', function(e) { 
-    var username = document.getElementById('username').value; 
-    var password = document.getElementById('password').value; 
-    listAccounts.forEach(account => { 
-        if(account.username === username) { 
-            alert("Login successful"); 
-            document.getElementById('content').style.display='block'; 
-            document.getElementById('loginForm').style.display='none'; 
-        } 
-    }); 
-}); 
+// Try to auto login
+if(localStorage.getItem('username') && usernames.includes(localStorage.getItem('username'))){
+  document.getElementById('message').innerHTML = "Welcome " + localStorage.getItem('username');
+  document.getElementById('content').style.display = "block";
+}
+
+function login(){
+  var username = document.getElementById('username').value;
+  if(usernames.includes(username)){
+    localStorage.setItem('username', username);
+    document.getElementById('message').innerHTML = "Welcome " + username;
+    document.getElementById('content').style.display = "block";
+  } else{
+    document.getElementById('message').innerHTML = "Invalid username";
+  }
+}
