@@ -1,10 +1,12 @@
+// List of username and password 
 var listAccounts = [ 
-    { username:'user1'}, 
-    { username:'user2'}, 
+    { username:'user1', password:'password1' }, 
+    { username:'user2', password:'password2' }, 
 ]; 
 
 document.getElementById('submit').addEventListener('click', function(e) { 
     var username = document.getElementById('username').value; 
+    var password = document.getElementById('password').value; 
     listAccounts.forEach(account => { 
         if(account.username === username) { 
             alert("Login successful"); 
